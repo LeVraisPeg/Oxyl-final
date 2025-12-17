@@ -10,15 +10,15 @@ public class Hand {
     private int cardCount;
 
     public Hand(int maxCards) {
-        cards = new Card[maxCards];
-        cardCount = 0;
+        this.cards = new Card[maxCards];
+        this.cardCount = 0;
     }
 
     public void addCard(Card card) {
         if (cardCount < cards.length) {
             cards[cardCount++] = card;
         } else {
-            throw new IllegalStateException("Hand is full");
+            throw new IllegalStateException("Main pleine, impossible d'ajouter une carte.");
         }
     }
 
@@ -68,7 +68,7 @@ public class Hand {
 
     public List<Card> Draw(int n) {
         if (n > cardCount) {
-            throw new IllegalArgumentException("Not enough cards in hand to draw " + n + " cards.");
+            throw new IllegalArgumentException("Pas assez de carte " + n + " cartes.");
         }
         List<Card> drawnCards = new ArrayList<>();
         for (int i = 0; i < n; i++) {
@@ -152,6 +152,7 @@ public class Hand {
     }
 
     //On vérifie si les valeurs des cartes sont consécutives
+    //On a trier la main avant
     private boolean isStraight(List<Card> hand) {
         int prev = hand.get(0).getValue().getValue();
         for (int i = 1; i < hand.size(); i++) {

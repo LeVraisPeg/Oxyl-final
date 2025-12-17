@@ -3,8 +3,8 @@ package fr.univtln.pegliasco.tp.model;
 import java.util.List;
 
 //TODO
-//Trier les cartes pour tieBreakerValues
 //Ajouter des tests pour compareTo
+//
 
 public class HandEvaluation implements Comparable<HandEvaluation> {
 

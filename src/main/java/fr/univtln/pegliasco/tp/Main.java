@@ -32,7 +32,7 @@ public class Main {
         hand.addCard(new Card(Color.TREFLE, Value.DEUX));
         hand.addCard(new Card(Color.CARREAU, Value.AS));
 
-        System.out.println("Main avant tri :");
+        System.out.println("\nMain avant tri :");
         for (Card c : hand.getCards()) {
             System.out.println(c);
         }
